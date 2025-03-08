@@ -12,10 +12,12 @@ import UserDashboard from './pages/user/UserDashboard.jsx';
 import AdminDashboard from './pages/admin/AdminDashboard.jsx';
 import AddProductPage from './pages/admin/AddProductPage.jsx';
 import UpdateProductPage from './pages/admin/UpdateProductPage.jsx';
+import MyState from './context/myState.jsx';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div>
+    <MyState>
       <Router>
         <Routes>
           <Route path='/' element={<Home/>} />
@@ -31,8 +33,9 @@ function App() {
           <Route path='/addproduct' element={<AddProductPage/>}/>
           <Route path='/updateproduct' element={<UpdateProductPage/>}/>
         </Routes>
+        <Toaster/>
       </Router>
-    </div>
+    </MyState>
   )
 }
 
